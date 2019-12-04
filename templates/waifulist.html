@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<html>
+   <body>
+		<div class="jumbotron text-center">
+		  <h1>Rate My Waifu!</h1>
+		  <p>The Ultimate waifu rating site!</p>
+		</div>
+		<div class="container text-center">
+      <table class="table table-striped table-dark" border = 1>
+         <h1> Waifus in DB </h1>
+         <thead style="font-size:30px">
+			<td style="width:150px">image</td>
+            <td>Name</td>
+            <td>Anime</td>
+			<td>Tags</td>
+            <td>Description</td>
+         </thead>
+         {% for row in rows %}
+            <tr>
+               <td><img src={{row["image"]}} width="150" height="200"></td>
+               <td style="font-size:20px">{{row["name"]}}</td>
+               <td style="font-size:20px"> {{ row["aname"]}}</td>
+			   <td>{% for r in rows2 %}
+					{% if (r.name==row.name) %}
+					{{r["tag"]}},
+					{% endif %}
+				{% endfor %}</td>
+
+               <td>{{row["description"]}}</td>	
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <a href = "/" style="font-size:30px">Go back to home page</a>
+	  </div>
+   </body>
+</html>

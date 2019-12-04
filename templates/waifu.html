@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<html>
+   <body>
+		<div class="jumbotron text-center">
+		  <h1>Rate My Waifu!</h1>
+		  <p>The Ultimate waifu rating site!</p>
+		</div>
+		<div class="container text-center">
+      <form action = "{{ url_for('newwaifu') }}" method = "POST">
+         <h3>Waifu Information</h3>
+         Name<br>
+         <input type = "text" name = "nm" /></br>
+         
+         Description<br>
+         <textarea name = "desc" ></textarea><br>
+         
+         Image URL<br>
+         <input type = "text" name = "imgurl" /></br>
+         
+		 Anime<br>
+         <input type = "text" name = "aname" /></br>
+		 Tags (seperate with commas)<br>
+			<textarea name="tags" id="t" style="width:200px;height:200px"></textarea><br>
+
+         <input type = "submit" value = "submit" /><br>
+      </form>
+	  </div>
+   </body>
+</html>

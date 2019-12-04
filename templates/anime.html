@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<html>
+   <body>
+		<div class="jumbotron text-center">
+		  <h1>Rate My Waifu!</h1>
+		  <p>The Ultimate waifu rating site!</p>
+		</div>
+		<div class="container col-md-3 col-md-offset-5">
+      <form action = "{{ url_for('newanime') }}" method = "POST">
+         <h3>Anime Information</h3>
+         Name<br>
+         <input type = "text" value="{{animeName}}" name = "nm" /></br>
+
+         Image URL<br>
+         <input type = "text" name = "imgurl" /></br>         
+
+         Description<br>
+         <textarea name = "desc" ></textarea><br>
+                  
+		 Season and Year<br>
+         <select name = "season" />
+			<option value="Winter" >Winter</option>
+			<option value="Spring">Spring</option>
+			<option value="Summer">Summer</option>
+			<option value="Fall">Fall</option>
+		 </select>
+		 <select name = "yr" />
+			<option value="2019">2019</option>
+			<option value="2018">2018</option>
+			<option value="2017">2017</option>
+			<option value="2016">2016</option>
+			<option value="2015">2015</option>
+			<option value="2014">2014</option>
+			<option value="2013">2013</option>
+			<option value="2012">2012</option>
+			<option value="2011">2011</option>
+			<option value="2010">2010</option>
+			<option value="2009">2009</option>
+			<option value="2008">2008</option>
+			<option value="2007">2007</option>
+			<option value="2006">2006</option>
+			<option value="2005">2005</option>
+			<option value="2004">2004</option>
+			<option value="2003">2003</option>
+			<option value="2002">2002</option>
+			<option value="2001">2001</option>
+			<option value="2000">2000</option>
+			<option value="1999">1999</option>
+			<option value="1998">1998</option>
+			<option value="1997">1997</option>
+			<option value="1996">1996</option>
+			<option value="1995">1995</option>
+			<option value="1994">1994</option>
+			<option value="1993">1993</option>
+			<option value="1992">1992</option>
+			<option value="1991">1991</option>
+			<option value="1990">1990</option>
+		 </select>
+		<br>
+		 
+		 Number of Episodes<br>
+         <input type = "text" name = "eps" style="width:80px" /></br>
+
+		 ESRB Rating<br>
+         <select name = "esrb" />
+			<option value="G - All Ages">G - All Ages</option>
+			<option value="PG - Children">PG - Children</option>
+			<option value="PG-13 - Teens 13 or older">PG-13 - Teens 13 or older</option>
+			<option value="R - 17+ (violence & profanity)">R - 17+ (violence & profanity)</option>
+			<option value="R+ - Mild Nudity">R+ - Mild Nudity</option>
+			<option value="Rx - Hentai">Rx - Hentai</option>
+		 </select>
+		</br>
+		 
+		 Studio Name<br>
+         <input type = "text" name = "snm" /></br>
+		 Genres<br>
+			<textarea name="genres" id="g" style="width:200px;height:200px"></textarea><br>
+		 <input type = "submit" value = "submit" /><br>
+		 </div>
+		 <div class="col-sm-4">
+		 Genres<br>
+			<input type = "checkbox" onclick="f(0)" id="c0" name="Action"/>Action</br>
+			<input type = "checkbox" onclick="f(1)" id="c1" name="Adventure"/>Adventure</br>
+			<input type = "checkbox" onclick="f(2)" id="c2" name="Comedy"/>Comedy</br>
+			<input type = "checkbox" onclick="f(3)" id="c3" name="Drama"/>Drama</br>
+			<input type = "checkbox" onclick="f(4)" id="c4" name="Demons"/>Demons</br>
+			<input type = "checkbox" onclick="f(5)" id="c5" name="Ecchi"/>Ecchi</br>
+			<input type = "checkbox" onclick="f(6)" id="c6" name="Fantasy"/>Fantasy</br>
+			<input type = "checkbox" onclick="f(7)" id="c7" name="Game"/>Game</br>
+			<input type = "checkbox" onclick="f(8)" id="c8" name="Harem"/>Harem</br>
+			<input type = "checkbox" onclick="f(9)" id="c9" name="Hentai"/>Hentai</br>
+			<input type = "checkbox" onclick="f(10)" id="c10" name="Historical"/>Historical</br>
+			<input type = "checkbox" onclick="f(11)" id="c11" name="Horror"/>Horror</br>
+			<input type = "checkbox" onclick="f(12)" id="c12" name="Isekai"/>Isekai</br>
+			<input type = "checkbox" onclick="f(13)" id="c13" name="Kids"/>Kids</br>
+			<input type = "checkbox" onclick="f(14)" id="c14" name="Magic"/>Magic</br>
+			<input type = "checkbox" onclick="f(15)" id="c15" name="Martial Arts"/>Martial Arts</br>
+			<input type = "checkbox" onclick="f(16)" id="c16" name="Mecha"/>Mecha</br>
+			<input type = "checkbox" onclick="f(17)" id="c17" name="Military"/>Military</br>
+			<input type = "checkbox" onclick="f(18)" id="c18" name="Music"/>Music</br>
+			<input type = "checkbox" onclick="f(19)" id="c19" name="Mystery"/>Mystery</br>
+			<input type = "checkbox" onclick="f(20)" id="c20" name="Parody"/>Parody</br>
+			<input type = "checkbox" onclick="f(21)" id="c21" name="Post-Apocalyptic"/>Post-Apocalyptic</br>
+			<input type = "checkbox" onclick="f(22)" id="c22" name="Psychological"/>Psychological</br>
+			<input type = "checkbox" onclick="f(23)" id="c23" name="Romance"/>Romance</br>
+			<input type = "checkbox" onclick="f(24)" id="c24" name="Sci-Fi"/>Sci-Fi</br>
+			<input type = "checkbox" onclick="f(25)" id="c25" name="Shoujo"/>Shoujo</br>
+			<input type = "checkbox" onclick="f(26)" id="c26" name="Shounen"/>Shounen</br>
+			<input type = "checkbox" onclick="f(27)" id="c27" name="School"/>Slice of Life</br>
+			<input type = "checkbox" onclick="f(28)" id="c28" name="Sports"/>Sports</br>
+			<input type = "checkbox" onclick="f(29)" id="c29" name="Supernatural"/>Supernatural</br>
+			<input type = "checkbox" onclick="f(30)" id="c30" name="Super Power"/>Super Power</br>
+			<input type = "checkbox" onclick="f(31)" id="c31" name="Vampire"/>Vampire</br>
+			<input type = "checkbox" onclick="f(32)" id="c32" name="Yaoi"/>Yaoi</br>
+			<input type = "checkbox" onclick="f(33)" id="c33" name="Yuri"/>Yuri</br>
+         </div>
+      </form>
+	  
+   </body>
+</html>
+<script>
+function f(id) {
+  var checkBox = document.getElementById("c"+id);
+  var text = document.getElementById("g");
+  if (checkBox.checked == true){
+  	if (text.value.search(checkBox.name) == -1) {
+  	if (text.value == "") {
+    	text.value = checkBox.name;
+    }
+    else {
+    	text.value = text.value+","+checkBox.name;
+    }
+    }
+  } else {
+  	var comma = ",";
+    
+  	var start = text.value.search(checkBox.name);
+    var end = checkBox.name.length;
+    if (start == 0) {
+    	if (text.value.search(",") == -1) {
+        	text.value = text.value.replace(checkBox.name, "");
+        }
+        else {
+    		text.value = text.value.replace(checkBox.name+comma, "");
+        }
+    }
+    else {
+    	text.value = text.value.replace(comma+checkBox.name, "");
+    }
+  }
+}
+</script>

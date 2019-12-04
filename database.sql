@@ -1,0 +1,7 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "test" (
+	"name"	TEXT,
+	"city"	TEXT,
+	PRIMARY KEY("name")
+);
+COMMIT;

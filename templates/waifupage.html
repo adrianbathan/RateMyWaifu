@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+.tags li {
+    padding-right: 24px;
+    display:inline;
+}
+
+.tags ul {
+    padding: 0;
+    list-style-type: none;
+	position: absolute;
+	bottom: 0;
+}
+</style>  
+</head>
+<html>
+   <body>
+		<div class="jumbotron text-center">
+		  <h1>Rate My Waifu!</h1>
+		  <p>The Ultimate waifu rating site!</p>
+		</div>
+		<div class="container" style="width:100%">
+		{% for row in rows %}
+			<section class="jumbotron text-left" style="background-color:pink">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6" style="padding-left:5%">
+					<h1 class="jumbotron-heading">{{row["name"]}}</h1>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6" style="padding-right:5%; text-align:right">
+					<h4>Appears in: <a href="#">{{ row["aname"]}}</a></h4>
+					</div>
+				<div class="col-lg-6 col-md-6 col-sm-6" style="padding-left:5%">
+					</br><img src={{row["image"]}} width="90%" height="600">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6" style="padding-right:5%">
+					</br>
+					<h4>Description</h4>
+					<p class="lead">{{row["description"]}}</p>
+					<div class="tags" style="vertical-align:sub">
+					  <ul>Tags:</br>
+					<li>{% for r in rows2 %}
+					{% if (r.name==row.name) %}
+					<a href="#">{{r["tag"]}}</a>&emsp;
+					{% endif %}
+				{% endfor %}</li>
+					  </ul>
+					  </div>
+				</div>
+        {% endfor %}
+				</div>
+			</section>
+
+      <a href = "/" style="font-size:30px">Go back to home page</a>
+	  </div>
+   </body>
+</html>
